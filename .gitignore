@@ -5,7 +5,6 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-detect_imgs_results
 detect_imgs_results_onnx
 widerface_evaluation
 
