@@ -62,7 +62,10 @@ for file_path in listdir:
     sum += boxes.size(0)
     for i in range(boxes.size(0)):
         box = boxes[i, :]
-        cv2.rectangle(orig_image, (box[0], box[1]), (box[2], box[3]), (0, 0, 255), 2)
+        # 确保坐标是整数类型
+        x1, y1, x2, y2 = int(box[0]), int(box[1]), int(box[2]), int(box[3])
+        cv2.rectangle(orig_image, (x1, y1), (x2, y2), (0, 0, 255), 2)
+        # cv2.rectangle(orig_image, (box[0], box[1]), (box[2], box[3]), (0, 0, 255), 2)
         # label = f"""{voc_dataset.class_names[labels[i]]}: {probs[i]:.2f}"""
         label = f"{probs[i]:.2f}"
         # cv2.putText(orig_image, label, (box[0], box[1] - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
