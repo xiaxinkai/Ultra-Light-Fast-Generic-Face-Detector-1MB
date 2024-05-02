@@ -1,0 +1,41 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: Current File with Arguments",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "--datasets",
+                "./data/wider_face_add_lm_10_10",
+                "--validation_dataset",
+                "./data/wider_face_add_lm_10_10",
+                "--net",
+                "slim",
+                "--num_epochs",
+                "200",
+                "--milestones",
+                "95,150",
+                "--lr",
+                "1e-2",
+                "--batch_size",
+                "24",
+                "--input_size",
+                "320",
+                "--checkpoint_folder",
+                "${workspaceFolder}/models/train-version-slim",
+                "--num_workers",
+                "4",
+                "--log_dir",
+                "${workspaceFolder}/models/train-version-slim/logs",
+                "--cuda_index",
+                "0"
+            ]
+        }
+    ]
+}
