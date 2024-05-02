@@ -7,6 +7,7 @@ import cv2
 import numpy as np
 import torch
 from numpy import random
+from random import choice as random_choice
 from torchvision import transforms
 
 
@@ -275,7 +276,7 @@ class RandomSampleCrop(object):
         height, width, _ = image.shape
         while True:
             # randomly choose a mode
-            mode = random.choice(self.sample_options)
+            mode = random_choice(self.sample_options)
             if mode is None:
                 return image, boxes, labels
 
@@ -380,7 +381,7 @@ class RandomSampleCrop_v2(object):
         height, width, _ = image.shape
         while True:
             # randomly choose a mode
-            mode = random.choice(self.sample_options)
+            mode = random_choice(self.sample_options)
             if mode is None:
                 return image, boxes, labels
 
